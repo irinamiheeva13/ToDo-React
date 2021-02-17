@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Merriweather', serif;
+  font-style: normal;
+  font-weight: normal;
+  src: url(./Fonts/Merriweather-Regular.ttf)
+}
+
+@font-face {
+  font-family: 'Merriweather', serif;
+  font-style: normal;
+  font-weight: normal;
+  src: url(./Fonts/Merriweather-Bold.ttf)
+}
+
+
+.app {
+  background: url("https://images.unsplash.com/photo-1506143925201-0252c51780b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80") center center/cover no-repeat;
+  height: 100vh;
+  padding: 30px;
+  font-family: 'Merriweather', serif;
+}
+
+header {
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-size: 46px;
+  color:rgb(136,108,73)
+}
+
+.todo-form {
+  margin: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+.todo-input {
+  width: 340px;
+  border-radius: 3px;
+  border: solid rgba(112, 77, 36, 0.664) 2px;
+  box-shadow: 1px 1px 1px rgba(141, 93, 38, 0.664);
+  font-size: 18px;
+}
+
+.todo-list {
+  padding: 5px;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 3px;
+  border: solid rgba(112, 77, 36, 0.664) 2px;
+  box-shadow: 1px 1px 1px rgba(141, 93, 38, 0.664);
+  font-size: 18px;
+  margin-bottom: 6px;
+  padding: 3px 10px;
+}
+
+.todo-item {
+  list-style: none;
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn,
+.submit-btn {
+  color: rgb(156, 116, 64);
+  border: none;
+  padding: 3px;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 0;
+}
+
+.submit-btn {
+  font-size: 20px;
+}
+
+.complete-btn {
+  margin-right: 10px;
+}
+
+
