@@ -21,13 +21,12 @@ function App() {
         store={store} 
         setStore={setStore} />
         <div className="todo-list">
-            {store.map((task, index) => (
+            {store.map((task) => (
             <TaskComponent
               setStore={setStore}
               store={store}
-              key={index}
+              key={task.id}
               text={task.text}
-              index={index}
               task={task}
             />
             ))}
@@ -48,7 +47,8 @@ function FormComponent({addTask, store, setStore}) {
     setStore([
       ...store,
       {text: inputText,
-      isDone: false,}
+      isDone: false,
+      id: Math.random() * 1000 }
     ]);
 
     setInputText("");
@@ -61,6 +61,7 @@ function FormComponent({addTask, store, setStore}) {
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
+      <div className="todo-wrapper">
       <input
        className="todo-input" 
         type="text"
@@ -73,6 +74,7 @@ function FormComponent({addTask, store, setStore}) {
       onClick={handleSubmit}>
         <FontAwesomeIcon icon={faPlusSquare} />
       </button>
+      </div>
     </form>
   )
 };
@@ -80,11 +82,14 @@ function FormComponent({addTask, store, setStore}) {
 function TaskComponent({text, task, store, setStore}) {
 
   const toggleTask = () => {
-    setStore(store.map((task) => {
-      return {
-        ...task,
-        isDone: !task.isDone,
+    setStore(store.map((item) => {
+      if (item.id === task.id) {
+        return {
+          ...item,
+          isDone: !item.isDone,
+        }
       }
+      return item
     }));
   };
  
@@ -99,7 +104,7 @@ function TaskComponent({text, task, store, setStore}) {
     <div className="todo">
       <li
       className="todo-item"
-      // style={{ textDecoration: task.isDone ? "line-through" : "" }}
+      style={{ textDecoration: task.isDone ? "line-through" : "" }}
       >{text}
       </li>
       <button

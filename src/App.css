@@ -14,7 +14,7 @@
 
 
 .app {
-  background: url("https://images.unsplash.com/photo-1506143925201-0252c51780b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80") center center/cover no-repeat;
+  background: linear-gradient(to right, #3e5151, #decba4); 
   height: 100vh;
   padding: 30px;
   font-family: 'Merriweather', serif;
@@ -26,7 +26,7 @@ header {
   text-align: center;
   font-family: 'Merriweather', serif;
   font-size: 46px;
-  color:rgb(136,108,73)
+  color:rgb(236, 220, 200)
 }
 
 .todo-form {
@@ -34,21 +34,32 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
 
+}
+
+.todo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 360px;
+  background: #fff;
+  border-radius: 3px; 
+  border: solid rgba(112, 77, 36, 0.664) 2px; 
+  box-shadow: 1px 1px 1px rgba(141, 93, 38, 0.664);
+  padding: 3px 10px;
 }
 
 .todo-input {
-  width: 340px;
-  border-radius: 3px;
-  border: solid rgba(112, 77, 36, 0.664) 2px;
-  box-shadow: 1px 1px 1px rgba(141, 93, 38, 0.664);
+  min-height: 2rem;
+  border: none;
   font-size: 18px;
+  outline: #fff;
 }
+
 
 .todo-list {
   padding: 5px;
-  max-width: 400px;
+  max-width: 360px;
   margin: auto;
   border-radius: 4px;
 }
@@ -76,18 +87,16 @@ header {
 .submit-btn {
   color: rgb(156, 116, 64);
   border: none;
-  padding: 3px;
+  padding: 0.5rem;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 1rem;
   margin: 0;
+  outline: none;
 }
 
-.submit-btn {
-  font-size: 20px;
-}
-
+.trash-btn,
 .complete-btn {
-  margin-right: 10px;
+  margin-left: 5px;
 }
 
 
